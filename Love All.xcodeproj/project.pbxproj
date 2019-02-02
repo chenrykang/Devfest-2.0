@@ -14,7 +14,7 @@
 		033733A221E134D9006D38C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337339F21E134D9006D38C9 /* LoginViewController.swift */; };
 		033733A321E134D9006D38C9 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733A021E134D9006D38C9 /* ComposeViewController.swift */; };
 		033733A921E137ED006D38C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033733A821E137ED006D38C9 /* GoogleService-Info.plist */; };
-		033733AF21E13D34006D38C9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733AE21E13D34006D38C9 /* TableViewController.swift */; };
+		033733AF21E13D34006D38C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733AE21E13D34006D38C9 /* ViewController.swift */; };
 		033733B321E145BE006D38C9 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733B221E145BE006D38C9 /* CreateProfileViewController.swift */; };
 		0340CF9B22062E8F0016B376 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CF9A22062E8F0016B376 /* EventPageViewController.swift */; };
 		0340CF9D22062ECB0016B376 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CF9C22062ECB0016B376 /* ProfileViewController.swift */; };
@@ -34,7 +34,7 @@
 		0337339F21E134D9006D38C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		033733A021E134D9006D38C9 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		033733A821E137ED006D38C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		033733AE21E13D34006D38C9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		033733AE21E13D34006D38C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		033733B221E145BE006D38C9 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		0340CF9A22062E8F0016B376 /* EventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageViewController.swift; sourceTree = "<group>"; };
 		0340CF9C22062ECB0016B376 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				91C0CACC22063B4B00307E00 /* EventTableViewCell.swift */,
 				0337338C21E13413006D38C9 /* AppDelegate.swift */,
 				033733B221E145BE006D38C9 /* CreateProfileViewController.swift */,
-				033733AE21E13D34006D38C9 /* TableViewController.swift */,
+				033733AE21E13D34006D38C9 /* ViewController.swift */,
 				91C0CACE22064A9600307E00 /* CustomCell.swift */,
 				0340CF9C22062ECB0016B376 /* ProfileViewController.swift */,
 				033733A021E134D9006D38C9 /* ComposeViewController.swift */,
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C0CACD22063B4B00307E00 /* EventTableViewCell.swift in Sources */,
-				033733AF21E13D34006D38C9 /* TableViewController.swift in Sources */,
+				033733AF21E13D34006D38C9 /* ViewController.swift in Sources */,
 				033733A321E134D9006D38C9 /* ComposeViewController.swift in Sources */,
 				033733B321E145BE006D38C9 /* CreateProfileViewController.swift in Sources */,
 				91C0CACF22064A9600307E00 /* CustomCell.swift in Sources */,
