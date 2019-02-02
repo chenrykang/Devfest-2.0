@@ -8,10 +8,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+struct CellData {
+    let image: UIImage?
+    let message: String?
+}
+
+class TableViewController: UITableViewController{
+    var data = [CellData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data = [CellData.init(image: test1, message: "FUCKING WORK, PLEASE")]
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +27,14 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
     }
     
 
