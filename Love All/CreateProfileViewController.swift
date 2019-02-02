@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page1ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     let ageValues = ["male", "female", "other"]
     @IBOutlet weak var nameLabel: UITextField!
