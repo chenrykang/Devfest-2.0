@@ -11,12 +11,13 @@
 		0337339421E13418006D38C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337339321E13418006D38C9 /* Assets.xcassets */; };
 		0337339721E13418006D38C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0337339521E13418006D38C9 /* LaunchScreen.storyboard */; };
 		033733A221E134D9006D38C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337339F21E134D9006D38C9 /* LoginViewController.swift */; };
-		033733A321E134D9006D38C9 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733A021E134D9006D38C9 /* ComposeViewController.swift */; };
 		033733A921E137ED006D38C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033733A821E137ED006D38C9 /* GoogleService-Info.plist */; };
 		033733AF21E13D34006D38C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733AE21E13D34006D38C9 /* ViewController.swift */; };
 		033733B321E145BE006D38C9 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033733B221E145BE006D38C9 /* CreateProfileViewController.swift */; };
-		0340CF9B22062E8F0016B376 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CF9A22062E8F0016B376 /* EventPageViewController.swift */; };
 		0340CF9D22062ECB0016B376 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CF9C22062ECB0016B376 /* ProfileViewController.swift */; };
+		0340CF9F22067B3A0016B376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0340CF9E22067B3A0016B376 /* Main.storyboard */; };
+		0340CFA122067B690016B376 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CFA022067B690016B376 /* ComposeViewController.swift */; };
+		0340CFA322067B7D0016B376 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340CFA222067B7D0016B376 /* EventPageViewController.swift */; };
 		77A36784912F3DEA3BD126F8 /* Pods_Love_All.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6189EE6FF58912E906DBB531 /* Pods_Love_All.framework */; };
 		91C0CACD22063B4B00307E00 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0CACC22063B4B00307E00 /* EventTableViewCell.swift */; };
 		91C0CACF22064A9600307E00 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0CACE22064A9600307E00 /* CustomCell.swift */; };
@@ -30,12 +31,13 @@
 		0337339621E13418006D38C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0337339821E13418006D38C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0337339F21E134D9006D38C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		033733A021E134D9006D38C9 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		033733A821E137ED006D38C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		033733AE21E13D34006D38C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		033733B221E145BE006D38C9 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
-		0340CF9A22062E8F0016B376 /* EventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageViewController.swift; sourceTree = "<group>"; };
 		0340CF9C22062ECB0016B376 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0340CF9E22067B3A0016B376 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0340CFA022067B690016B376 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		0340CFA222067B7D0016B376 /* EventPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPageViewController.swift; path = "../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/767EAE3C-36FC-4020-B846-D59D524BDCF6/EventPageViewController.swift"; sourceTree = "<group>"; };
 		6189EE6FF58912E906DBB531 /* Pods_Love_All.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Love_All.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C0CACC22063B4B00307E00 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		91C0CACE22064A9600307E00 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -80,10 +82,11 @@
 				033733B221E145BE006D38C9 /* CreateProfileViewController.swift */,
 				033733AE21E13D34006D38C9 /* ViewController.swift */,
 				91C0CACE22064A9600307E00 /* CustomCell.swift */,
+				0340CFA022067B690016B376 /* ComposeViewController.swift */,
+				0340CFA222067B7D0016B376 /* EventPageViewController.swift */,
 				0340CF9C22062ECB0016B376 /* ProfileViewController.swift */,
-				033733A021E134D9006D38C9 /* ComposeViewController.swift */,
 				0337339F21E134D9006D38C9 /* LoginViewController.swift */,
-				0340CF9A22062E8F0016B376 /* EventPageViewController.swift */,
+				0340CF9E22067B3A0016B376 /* Main.storyboard */,
 				0337339321E13418006D38C9 /* Assets.xcassets */,
 				0337339521E13418006D38C9 /* LaunchScreen.storyboard */,
 				0337339821E13418006D38C9 /* Info.plist */,
@@ -172,6 +175,7 @@
 				0337339721E13418006D38C9 /* LaunchScreen.storyboard in Resources */,
 				033733A921E137ED006D38C9 /* GoogleService-Info.plist in Resources */,
 				0337339421E13418006D38C9 /* Assets.xcassets in Resources */,
+				0340CF9F22067B3A0016B376 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0340CFA122067B690016B376 /* ComposeViewController.swift in Sources */,
 				91C0CACD22063B4B00307E00 /* EventTableViewCell.swift in Sources */,
 				033733AF21E13D34006D38C9 /* ViewController.swift in Sources */,
-				033733A321E134D9006D38C9 /* ComposeViewController.swift in Sources */,
 				033733B321E145BE006D38C9 /* CreateProfileViewController.swift in Sources */,
 				91C0CACF22064A9600307E00 /* CustomCell.swift in Sources */,
 				033733A221E134D9006D38C9 /* LoginViewController.swift in Sources */,
 				0340CF9D22062ECB0016B376 /* ProfileViewController.swift in Sources */,
-				0340CF9B22062E8F0016B376 /* EventPageViewController.swift in Sources */,
+				0340CFA322067B7D0016B376 /* EventPageViewController.swift in Sources */,
 				0337338D21E13413006D38C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
