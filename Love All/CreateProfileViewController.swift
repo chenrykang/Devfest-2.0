@@ -18,6 +18,7 @@ class CreateProfileViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var profileView: UIImageView!
     
     let picker = UIImagePickerController()
     
@@ -61,16 +62,21 @@ class CreateProfileViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         selected = genderValues[0]
         
-        view.addSubview(profileImageView)
-        setupProfileImageView()
+        checkPermission()
+        
+        
+        profileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        profileView.isUserInteractionEnabled = true
+        
+        //setupProfileImageView()
+        //view.addSubview(profileImageView)
         
         //check photo permission
-        checkPermission()
         
     }
 
     
-    func setupProfileImageView() {
+    /*func setupProfileImageView() {
         //need x, y, width, height constraints
         
         profileImageView.frame = CGRect(x: 230, y: 115, width: 125, height: 125)
@@ -78,15 +84,15 @@ class CreateProfileViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.frame = CGRect(x: 230, y: 115, width: 125, height: 125)
         imageView.image = UIImage(named: "profileImage")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-        imageView.isUserInteractionEnabled = true
+        
         
         return imageView
-    }()
+    }()*/
     
     @objc func handleSelectProfileImageView(){
         
@@ -107,7 +113,7 @@ class CreateProfileViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profileImageView.image = selectedImage
+            profileView.image = selectedImage
         }
         
         dismiss(animated: true, completion: nil)
