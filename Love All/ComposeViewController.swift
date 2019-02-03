@@ -8,15 +8,47 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
+import Photos
 
-class ComposeViewController: UIViewController, UITextFieldDelegate {
+class ComposeViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var EventNameText: UITextField!
     @IBOutlet weak var DescriptionText: UITextView!
     @IBOutlet weak var DateTimeText: UITextField!
     var datePicker : UIDatePicker?
+    @IBOutlet weak var image: UIImageView!
     
     var ref: DatabaseReference?
+    
+    let picker = UIImagePickerController()
+    
+    
+    //check photo permissions
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +65,42 @@ class ComposeViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
+        
+        picker.delegate = self
+        checkPermission()
+        
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        image.isUserInteractionEnabled = true
     }
+    @objc func handleSelectProfileImageView(){
+        
+        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+        
+    }
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            image.image = selectedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -52,6 +119,13 @@ class ComposeViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func doneIsPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "toEvent", sender: self)
+        
+        let userID = Auth.auth().currentUser!.uid
+        self.ref?.child("Posts").child(userID).child("Title").setValue(EventNameText.text)
+        self.ref?.child("Posts").child(userID).child("Description").setValue(DescriptionText.text)
+        self.ref?.child("Posts").child(userID).child("DateTime").setValue(DateTimeText.text)
+
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,6 +136,7 @@ class ComposeViewController: UIViewController, UITextFieldDelegate {
             DestComposeViewController.EventNameText = self.EventNameText.text!
             DestComposeViewController.EventDescriptionText = self.DescriptionText.text!
             DestComposeViewController.DateTimeText = self.DateTimeText.text!
+            DestComposeViewController.eventPicture = self.image.image!
         }
         
     }

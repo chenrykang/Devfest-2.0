@@ -151,7 +151,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a Date and Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-YV-V96">
-                                                        <rect key="frame" x="96" y="327" width="179" height="30"/>
+                                                        <rect key="frame" x="98" y="304" width="179" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -166,25 +166,26 @@
                                                             <segue destination="KZd-Ny-ngd" kind="presentation" identifier="toEvent" id="1lv-K7-Paj"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkL-9K-teI">
-                                                        <rect key="frame" x="96" y="54" width="179" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kO0-We-s9t">
-                                                        <rect key="frame" x="67" y="152" width="240" height="128"/>
+                                                        <rect key="frame" x="27" y="117" width="147" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fooddrive" translatesAutoresizingMaskIntoConstraints="NO" id="WL2-eS-rtD">
+                                                        <rect key="frame" x="212" y="117" width="138" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkL-9K-teI">
+                                                        <rect key="frame" x="119" y="59" width="137" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="TkL-9K-teI" firstAttribute="top" secondItem="XFH-YP-x51" secondAttribute="top" constant="105" id="9OM-Ra-4tM"/>
-                                                    <constraint firstItem="TkL-9K-teI" firstAttribute="centerX" secondItem="XFH-YP-x51" secondAttribute="centerX" id="rpx-jt-wlk"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -213,6 +214,7 @@
                         <outlet property="DateTimeText" destination="BaL-YV-V96" id="pl3-uD-rFa"/>
                         <outlet property="DescriptionText" destination="kO0-We-s9t" id="H2b-lP-inI"/>
                         <outlet property="EventNameText" destination="TkL-9K-teI" id="eV2-u0-N3s"/>
+                        <outlet property="image" destination="WL2-eS-rtD" id="tLz-XH-B1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoe-4Y-qAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,7 +230,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPl-kI-2BQ">
-                                <rect key="frame" x="67" y="95" width="240" height="128"/>
+                                <rect key="frame" x="67" y="95" width="240" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="User who made the event and option of contact info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X8R-Ol-aDc">
@@ -238,15 +240,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-LY-zKN">
-                                <rect key="frame" x="33" y="47" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM1-2o-cpg">
-                                <rect key="frame" x="67" y="282" width="240" height="21"/>
+                                <rect key="frame" x="67" y="357" width="240" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -254,6 +249,13 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-Zy-U4Y">
                                 <rect key="frame" x="67" y="409" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-LY-zKN">
+                                <rect key="frame" x="141" y="48" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -271,6 +273,7 @@
                         <outlet property="DateTime" destination="Raw-Zy-U4Y" id="yTz-vd-I42"/>
                         <outlet property="EventDescription" destination="DM1-2o-cpg" id="hbb-6L-nIT"/>
                         <outlet property="EventNameLabel" destination="ilc-LY-zKN" id="wGR-lJ-wTY"/>
+                        <outlet property="image" destination="EPl-kI-2BQ" id="wqN-Xl-z7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeN-wi-KPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,9 +413,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fooddrive" width="612" height="408"/>
         <image name="profileImage" width="775" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EUM-0a-qXO"/>
+        <segue reference="zeJ-lb-IAM"/>
     </inferredMetricsTieBreakers>
 </document>
