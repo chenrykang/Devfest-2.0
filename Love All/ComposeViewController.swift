@@ -120,10 +120,9 @@ class ComposeViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBAction func doneIsPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "toEvent", sender: self)
         
-        let userID = Auth.auth().currentUser!.uid
-        self.ref?.child("Posts").child(userID).child("Title").setValue(EventNameText.text)
-        self.ref?.child("Posts").child(userID).child("Description").setValue(DescriptionText.text)
-        self.ref?.child("Posts").child(userID).child("DateTime").setValue(DateTimeText.text)
+        self.ref?.child("Posts").child("Post1").child("Title").setValue(EventNameText.text)
+        self.ref?.child("Posts").child("Post1").child("Description").setValue(DescriptionText.text)
+        self.ref?.child("Posts").child("Post1").child("DateTime").setValue(DateTimeText.text)
 
         
     }

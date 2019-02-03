@@ -21,27 +21,33 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         // only need to fetch once so use single event
         
-        let ref = Database.database().reference(withPath: "Posts")
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        let ref = Database.database().reference().child("Posts").child("Post1").child("Description")
+        
+        ref.observeSingleEvent(of: .value, with: {
+            snapshot in
             
-            if !snapshot.exists() { return }
-            
-            //print(snapshot) // Its print all values including Snap (User)
-            
-            //print(snapshot.value!)
-            
-            let titleData = snapshot.childSnapshot(forPath: "Title").value
-            print(titleData!)
-            
+            guard let Description = snapshot.value as? String else {
+                print("Value is Nil or not String")
+                return
+            }
+            print(Description)
+           
         })
         
-        data = [CellData.init(image: #imageLiteral(resourceName: "fooddrive"), title: "Title 1", message: "Food Drive \nNew York City"), CellData.init(image: #imageLiteral(resourceName: "walkathon"), title: "Title2", message: "Fundraising Walkathon\nNew Jersey"), CellData.init(image: #imageLiteral(resourceName: "test3"), title: "Title3", message: "Hurricane Relief Donation \nConnecticut")]
+        data = [CellData.init(image: #imageLiteral(resourceName: "fooddrive"), title: "Food Drive", message: "Food Drive \nNew York City"), CellData.init(image: #imageLiteral(resourceName: "walkathon"), title: "Charity Walk", message: "Fundraising Walkathon\nNew Jersey"), CellData.init(image: #imageLiteral(resourceName: "test3"), title: "Title3", message: "Hurricane Relief Donation \nConnecticut")]
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 150
         // Do any additional setup after loading the view.
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "123", sender: self)
+
     }
 
     override func didReceiveMemoryWarning() {
