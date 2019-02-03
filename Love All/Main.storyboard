@@ -281,10 +281,10 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="DateTime" destination="Raw-Zy-U4Y" id="yTz-vd-I42"/>
-                        <outlet property="EventDescription" destination="DM1-2o-cpg" id="hbb-6L-nIT"/>
-                        <outlet property="EventNameLabel" destination="ilc-LY-zKN" id="wGR-lJ-wTY"/>
-                        <outlet property="image" destination="EPl-kI-2BQ" id="wqN-Xl-z7c"/>
+                        <outlet property="DateTime" destination="Raw-Zy-U4Y" id="zKg-T6-9QM"/>
+                        <outlet property="EventDescription" destination="xtB-ga-8xo" id="O7i-tB-L48"/>
+                        <outlet property="EventNameLabel" destination="ilc-LY-zKN" id="vCV-ZF-MIe"/>
+                        <outlet property="image" destination="EPl-kI-2BQ" id="4o1-RN-JfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeN-wi-KPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
