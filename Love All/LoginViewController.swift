@@ -1,4 +1,4 @@
-//
+// Log-in page 
 //  ViewController.swift
 //  CollegeParty
 //
