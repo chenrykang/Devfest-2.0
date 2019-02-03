@@ -50,13 +50,19 @@ class ComposeViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func doneIsPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "toEvent", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let DestComposeViewController : EventPageViewController = segue.destination as! EventPageViewController
         
-            DestComposeViewController.EventNameLabel.text = EventNameText.text!
-            DestComposeViewController.EventDescription.text = EventNameText.text!
-            DestComposeViewController.DateTime.text = DateTimeText.text!
+        if segue.identifier == "toEvent" {
+            let DestComposeViewController: EventPageViewController = segue.destination as! EventPageViewController
+            
+            DestComposeViewController.EventNameText = self.EventNameText.text!
+            DestComposeViewController.EventDescriptionText = self.DescriptionText.text!
+            DestComposeViewController.DateTimeText = self.DateTimeText.text!
+        }
         
     }
     
