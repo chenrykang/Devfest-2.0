@@ -269,6 +269,7 @@
                             <outlet property="delegate" destination="Kpr-uD-H9k" id="8UQ-dZ-0Q3"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="667"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbc-zD-vvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

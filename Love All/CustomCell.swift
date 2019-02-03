@@ -17,12 +17,14 @@ class CustomCell: UITableViewCell {
     var messageView: UITextView = {
         var textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isScrollEnabled = false
         return textView
     }()
     
     var mainImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         return imageView
         
     }()
@@ -34,14 +36,15 @@ class CustomCell: UITableViewCell {
         self.addSubview(messageView)
         
         mainImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        mainImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        mainImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        mainImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        mainImageView.bottomAnchor.constraint(equalTo: self.messageView.topAnchor).isActive = true
+        mainImageView.heightAnchor.constraint(equalToConstant: 200)
         
-        messageView.leftAnchor.constraint(equalTo: self.mainImageView.rightAnchor).isActive = true
+        messageView.heightAnchor.constraint(equalToConstant: 10)
+        messageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         messageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        messageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
     
     override func layoutSubviews() {

@@ -19,9 +19,11 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        data = [CellData.init(image: #imageLiteral(resourceName: "test2"), message: "Hurricane Relief"), CellData.init(image: #imageLiteral(resourceName: "test2"), message: ""), CellData.init(image: #imageLiteral(resourceName: "test2"), message: "FUCKING WORK, PLEASE"), CellData.init(image: #imageLiteral(resourceName: "test2"), message: "FUCKING WORK, PLEASE"), CellData.init(image: #imageLiteral(resourceName: "test2"), message: "FUCKING WORK, PLEASE")]
+        data = [CellData.init(image: #imageLiteral(resourceName: "fooddrive"), message: "Food Drive \nNew York City"), CellData.init(image: #imageLiteral(resourceName: "walkathon"), message: "Fundraising Walkathon\nNew Jersey"), CellData.init(image: #imageLiteral(resourceName: "test3"), message: "Hurricane Relief Donation \nConnecticut"), CellData.init(image: #imageLiteral(resourceName: "test3"), message: "idk I ran out of ideas \nConnecticut"), CellData.init(image: #imageLiteral(resourceName: "test3"), message: "idk I ran out of ideas \nConnecticut")]
         
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 150
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +36,7 @@ class TableViewController: UITableViewController{
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
         cell.mainImage = data[indexPath.row].image
         cell.message = data[indexPath.row].message
+        cell.layoutSubviews()
         return cell
     }
     
