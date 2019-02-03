@@ -6,13 +6,28 @@
 //  Copyright © 2019 Christopher Kang. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class EventPageViewController: UIViewController {
 
+    
+    @IBOutlet weak var EventNameLabel: UILabel!
+    var EventNameText = String()
+    
+    @IBOutlet weak var EventDescription: UITextView!
+    var EventDescriptionText = String()
+    
+   
+    @IBOutlet weak var DateTime: UITextView!
+    var DateTimeText = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        EventNameLabel.text = EventNameText
+        EventDescription.text = EventDescriptionText
+        DateTime.text = DateTimeText
         // Do any additional setup after loading the view.
     }
     

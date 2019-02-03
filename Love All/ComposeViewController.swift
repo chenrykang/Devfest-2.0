@@ -9,20 +9,41 @@
 import UIKit
 import FirebaseDatabase
 
-class ComposeViewController: UIViewController {
+class ComposeViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var titleView: UITextField!
-    @IBOutlet weak var hostView: UITextField!
+    @IBOutlet weak var EventNameText: UITextField!
+    @IBOutlet weak var DescriptionText: UITextView!
+    @IBOutlet weak var DateTimeText: UITextField!
+    var datePicker : UIDatePicker?
     
-     var ref: DatabaseReference?
+    var ref: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        DateTimeText.inputView = datePicker
+        datePicker?.addTarget(self, action: #selector(ComposeViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ComposeViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        DateTimeText.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,15 +51,15 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addPost(_ sender: Any) {
-    ref?.child("Posts").child("Post1").child("Title").setValue(titleView.text)
-    ref?.child("Posts").child("Post1").child("Host").setValue(hostView.text)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let DestComposeViewController : EventPageViewController = segue.destination as! EventPageViewController
         
-    ref?.child("Posts").child("Post1").child("Details").setValue(textView.text)
+            DestComposeViewController.EventNameLabel.text = EventNameText.text!
+            DestComposeViewController.EventDescription.text = EventNameText.text!
+            DestComposeViewController.DateTime.text = DateTimeText.text!
+        
     }
     
-    @IBAction func cancelPost(_ sender: Any) {
-    }
     /*
     // MARK: - Navigation
 
